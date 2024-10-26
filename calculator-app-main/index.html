@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Caveat:wght@400..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&family=Vast+Shadow&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wraper">
+        <nav>
+          <h1>Calc</h1>
+          <ul>
+            <li onclick="versi1()">1</li>
+            <li onclick="versi2()">2</li>
+            <li onclick="versi3()">3</li>
+          </ul>
+        </nav>
+        <form>
+          <div id="result">
+            <input type="text" name="display" readonly/>
+          </div>
+          <div class="calcu">
+            <div>
+              <input type="button" value="7" onclick="display.value += '7'">
+              <input type="button" value="8" onclick="display.value += '8'">
+              <input type="button" value="9" onclick="display.value += '9'">
+              <input type="button" value="DEL" class="abu" onclick="display.value= display.value.toString().slice(0, -1)">
+            </div>
+            <div>
+              <input type="button" value="4" onclick="display.value += '4'">
+              <input type="button" value="5" onclick="display.value += '5'">
+              <input type="button" value="6" onclick="display.value += '6'">
+              <input type="button" value="+" onclick="display.value += '+'">
+            </div>
+            <div>
+              <input type="button" value="1" onclick="display.value += '1'">
+              <input type="button" value="2" onclick="display.value += '2'">
+              <input type="button" value="3" onclick="display.value += '3'">
+              <input type="button" value="-" onclick="display.value += '-'">
+            </div>
+            <div>
+              <input type="button" value="." onclick="display.value += '.'">
+              <input type="button" value="0" onclick="display.value += '0'">
+              <input type="button" value="/" onclick="display.value += '/'">
+              <input type="button" value="*" onclick="display.value += '*'">
+            </div>
+            <div class="operator">
+              <input class="abu" type="button" value="Reset" onclick="display.value=''">
+              <input class="merah" type="button" value="=" onclick="display.value = eval(display.value)">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script>
+    let container = document.querySelector(".container")
+    function versi1(){
+      container.classList.remove("version-2")
+      container.classList.remove("version-3")
+    }
+    function versi2(){
+      container.classList.add("version-2")
+      container.classList.remove("version-3")
+    }
+    function versi3(){
+      container.classList.add("version-3")
+      container.classList.remove("version-2")
+    }
+  </script>
+  </body>
+</html>

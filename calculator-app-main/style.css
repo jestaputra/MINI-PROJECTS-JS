@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+:root{
+    --background-color: rgb(41, 62, 89);
+    --text-color: white;
+    --input-color: white;
+    --result-color: white;
+    --result-background: rgba(0, 0, 0, 0.747);
+    --container-box-number: rgba(44, 43, 43, 0.688);
+    --box-number-background: #f6f5f5;
+    --box-number-text: black;
+    --box-number-background-shadow: rgb(183, 162, 3);
+    --box-number-background-hover: #ffe6e6;
+    --operator-background: rgb(117, 127, 197);
+    --operator-background-text: white;
+    --operator-background-shadow: rgb(97, 110, 208);
+    --background-result: crimson;
+    --result-background-text: white;
+    --result-background-shadow: rgb(121, 13, 34);
+}
+.version-2{
+    --background-color: #f4f3f3;
+    --text-color: black;
+    --result-color: black;
+    --result-background: white;
+    --container-box-number: rgb(210, 191, 191);
+    --box-number-background: rgb(224, 223, 223);
+    --box-number-text: black;
+    --box-number-background-shadow: gray;
+    --box-number-background-hover: white;
+    --operator-background: rgb(98, 197, 182);
+    --operator-background-text: white;
+    --operator-background-shadow: rgba(0, 0, 0, 0.533);
+    --background-result: aqua;
+    --result-background-text: white;
+    --result-background-shadow: rgba(0, 0, 0, 0.533);
+}
+.version-3{
+    --background-color: rgb(32, 2, 32);
+    --text-color: gold;
+    --result-color: gold;
+    --result-background: rgb(50, 1, 50);
+    --container-box-number: rgb(50, 1, 50);
+    --box-number-background: rgb(65, 2, 65);
+    --box-number-text: gold;
+    --box-number-background-shadow: purple;
+    --box-number-background-hover: rgb(255, 0, 255);
+    --operator-background: purple;
+    --operator-background-text: white;
+    --operator-background-shadow: gold;
+    --background-result: rgba(0, 0, 0, 0.336);
+    --result-background-text: white;
+    --result-background-shadow: white;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+.wraper{
+    width: 500px;
+    background: transparent;
+    padding: 20px 30px;
+}
+.wraper h1{
+    font-size: 18px;
+}
+.wraper ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+}
+.wraper ul li:hover{
+    background: rgb(201, 201, 201);
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 20px;
+}
+form{
+    padding: 0 25px;
+}
+#result input{
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 2em;
+    padding: 20px;
+    border-radius: 5px;
+    background: var(--result-background);
+    color: var(--result-color);
+    text-align: end;
+}
+.calcu{
+    background: var(--container-box-number);
+    padding: 20px 10px;
+    text-align: center;
+    display: column;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.calcu input{
+    width: 75px;
+    height: 45px;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 7px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: var(--box-number-background);
+    color: var(--box-number-text);
+    box-shadow: 0 4px 0 0 var(--box-number-background-shadow);
+    cursor: pointer;
+    transition: all .4s;
+}
+.calcu input:hover{
+    background: var(--box-number-background-hover);
+}
+.operator input{
+    width: 167px;
+}
+.calcu input.abu{
+    background: var(--operator-background);
+    color: var(--operator-background-text);
+    box-shadow: 0 4px 0 0 var(--operator-background-shadow);
+}
+.calcu input.merah{
+    background: var(--background-result);
+    color: var(--result-background-text);
+    box-shadow: 0 4px 0 0 var(--result-background-shadow);
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 500px){
+    .calcu input{
+        /* width: 50px;
+        height: 30px;
+        font-size: 12px; */
+        margin: 10px 2px;
+    }
+    .operator input{
+        margin-top: 10px;
+        width: 100px;
+    }
+    .calcu{
+        padding: 20px 0;
+        width: 100%;
+    }
+    form{
+        padding: 0;
+    }
+    .wraper{
+        padding: 20px 20px;
+    }
+}
+@media only screen and (max-width: 389px){
+    .calcu input{
+        width: 65px;
+    }
+    .operator input{
+        width: 100px;
+    }
+}
